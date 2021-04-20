@@ -1,0 +1,97 @@
+<div class="container" style="padding-top: 1%">
+    <div class="row">
+      <div class="card mb-3" style="padding-top: 1%">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div
+              *ngFor="let carImage of carImages; index as i; first as firstImage"
+              class="carousel-item align-self-center"
+              [ngClass]="{ active: firstImage }"
+              style="height: 50%; width: 50%"
+            >
+              <img
+                src="{{ imageUrl }}{{ carImage.imagePath }}"
+                class="img-fluid"
+                alt="..."
+                style="height: 100%; width: 100%"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Geri</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">İleri</span>
+          </button>
+        </div>
+  
+        <div class="card-body">
+          <h5 class="card-title">
+            <li class="list-group-item list-group-item-info">
+              Araba Adı : {{ car.brandName }}
+            </li>
+          </h5>
+          <p class="card-text">
+            <li class="list-group-item list-group-item-primary">
+              Marka : {{ car.brandName }}
+            </li>
+            <li class="list-group-item list-group-item-primary">
+              Renk : {{ car.colorName }}
+            </li>
+            <li class="list-group-item list-group-item-primary">
+              Model : {{ car.modelYear }}
+            </li>
+            <li class="list-group-item list-group-item-primary">
+              Günlük fiyat : {{ car.dailyPrice | currency: "₺" }}
+            </li>
+            <li class="list-group-item list-group-item-primary">
+              Açıklama : {{ car.description }}
+            </li>
+            <li>
+  
+  
+              <div class="row">
+                <div class="col-md-6">
+                  <button
+                    routerLink="/cars"
+                    (click)="getBack()"
+                    type="button"
+                    aria-current="true"
+                    class="btn btn-outline-danger"
+                  >
+                    Geri
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <button
+                    routerLink="/rentals/add"
+                    style="width: 100%"
+                    type="button"
+                    aria-current="true"
+                    class="btn btn-success"
+                    
+                  >
+                    Kirala
+                  </button>
+                </div>
+              </div>
+            </li>
+          </p>
+        </div>
+  </div>

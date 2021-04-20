@@ -17,6 +17,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 import { ToastrModule } from "ngx-toastr";
 import { from } from 'rxjs';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { from } from 'rxjs';
     CustomerComponent,
     RentalComponent,
     VatAddedPipe,
-    FilterPipePipe
+    FilterPipePipe,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,
